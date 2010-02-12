@@ -16,4 +16,6 @@ has 'u'         => ( isa => 'Bool', is => 'rw' );
 has 'undef'     => ( isa => 'Bool', is => 'rw' );
 has 'undef_str' => ( isa => 'Str',  is => 'rw' );
 
+has '_internal' => ( isa => 'Str', is => 'ro', default => 'internal_value' );
+
 1;
