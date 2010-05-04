@@ -16,6 +16,10 @@ has 'u'         => ( isa => 'Bool', is => 'rw' );
 has 'undef'     => ( isa => 'Bool', is => 'rw' );
 has 'undef_str' => ( isa => 'Str',  is => 'rw' );
 
-has '_internal' => ( isa => 'Str', is => 'ro', default => 'internal_value' );
+has '_internal' => ( isa => 'Str', is => 'ro', lazy_build => 1 );
+
+sub _build__internal {
+    die "This builder should not be seen";
+}
 
 1;

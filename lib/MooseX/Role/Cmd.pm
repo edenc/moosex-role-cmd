@@ -148,6 +148,7 @@ sub cmd_args {
     my %non_flag   = map    { $_ => 1 } __PACKAGE__->meta->get_attribute_list;
 
     my @flag_attrs = grep   { !$non_flag{$_->name} }
+                     grep   { substr($_->name, 0, 1) ne '_' }
                      map    { $self->meta->get_attribute($_) }
                      $self->meta->get_attribute_list;
 
@@ -322,12 +323,7 @@ sub _attr_to_cmd_options {
             if $attr_value;                             # only add if attr is true
     }
     else {
-
-        if ( defined $attr_value                        # only add if attr value is defined
-             &&
-             $attr_name !~ / ^ _ /xms                   # and attr name doesn't start with '_'
-           )
-        {
+        if ( defined $attr_value ) {                    # only add if attr value is defined
             push @options, ( $opt_fullname, $attr_value )
         }
     }
