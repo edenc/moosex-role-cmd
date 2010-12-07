@@ -1,0 +1,6 @@
+tar.gz$
+^.git
+.bak$
+^blib
+pm_to_blib
+MANIFEST.SKIP
