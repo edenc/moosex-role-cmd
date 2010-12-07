@@ -8,7 +8,7 @@ use IPC::Cmd ();
 use Moose::Role;
 use MooseX::Role::Cmd::Meta::Attribute::Trait;
 
-our $VERSION = '0.08';
+our $VERSION = '0.10';
 
 =head1 NAME
 
